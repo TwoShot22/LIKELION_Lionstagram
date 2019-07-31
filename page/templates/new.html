@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<form action="{% url 'new' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %} <!-- 보안을 위한 태그, 필수! -->
+    <input type="file" name="image" value="">
+    <br>
+    <textarea name="content" cols="80" rows="8"></textarea>
+    <br>
+    <input type="submit" value="글쓰기">
+</form>
+{% endblock %}
